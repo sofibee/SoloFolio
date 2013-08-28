@@ -5,8 +5,6 @@ Gallery shortcodes
 
 */
 
-add_shortcode('gallery', 'gallery_shortcode');
-
 //deactivate WordPress function
 remove_shortcode('gallery', 'gallery_shortcode');
  
@@ -56,62 +54,27 @@ function solofolio_gallery_shortcode($attr) {
 		'width'    => '',
 		'exclude'    => ''
 	), $attr));
+	
+	$post_content = $post->post_content;
+    preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
+    $attachment_ids = explode(",", $ids[1]);
 
 	$GLOBALS['solofolio_autoplay'] = $autoplay;
 	$GLOBALS['solofolio_transition'] = $transition;
 
 	$id = intval($id);
-	if ( 'RAND' == $order )
+	if ( 'RAND' == $order ) {
 		$orderby = 'none';
-
-	if ( !empty($include) ) {
-		$include = preg_replace( '/[^0-9,]+/', '', $include );
-		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-
-		$attachments = array();
-		foreach ( $_attachments as $key => $val ) {
-			$attachments[$val->ID] = $_attachments[$key];
-		}
-	} elseif ( !empty($exclude) ) {
-		$exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
-		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-	} else {
-	$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 	}
-
-	if ( empty($attachments) )
-		return '';
-
-	if ( is_feed() ) {
-		$output = "\n";
-		foreach ( $attachments as $att_id => $attachment )
-			$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
-		return $output;
-	}
-
+	
 	$itemtag = tag_escape($itemtag);
 	$captiontag = tag_escape($captiontag);
 	
-	if ( !empty($include) ) {
-	$include = preg_replace( '/[^0-9,]+/', '', $include );
-	$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-
-	$attachments = array();
-	foreach ( $_attachments as $key => $val ) {
-		$attachments[$val->ID] = $_attachments[$key];
-	}
-} else {
-	$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-}
-
-if ( empty($attachments) )
-	return '';
+	// New way of loading gallery content. What a mess.
+	$post_content = $post->post_content;
+    preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
+    $attachment_ids = explode(",", $ids[1]);
 	
-	
-	
-	$columns = intval($columns);
-	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
-	$float = is_rtl() ? 'right' : 'left';
 	
 	$selector = "solofolio";
 	
@@ -187,10 +150,7 @@ if ( empty($attachments) )
 	if ($type == "slideshow") { 
 		include("gallery/gallery-default.php");
 	}
-	
-	if ($type == "super") { 
-		include("gallery/gallery-super.php");
-	}
+
 			
 	if ($type == "side-scroll") {
 		include("gallery/gallery-sidescroll.php");

@@ -1,49 +1,54 @@
 <?php
 /* 
+
 SoloFolio
 Gallery Template: Cycle-React (Picturefill + jQuery Cycle hack)
+
 */
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
 $output .="<div id=\"solofolio-cyclereact-stage\">";
 
-$output .="<div id=\"solofolio-cyclereact-images\" class=\"cycle-slideshow\" data-cycle-slides=\"div.solofolio-cycelereact-slide\"
+$output .="<div id=\"solofolio-cyclereact-images\" class=\"cycle-slideshow manual\" data-cycle-slides=\"div.solofolio-cycelereact-slide\"
 data-cycle-prev=\".prev\"
 data-cycle-next=\".next\"
 data-cycle-auto-height=0
+data-cycle-timeout=0
 data-cycle-fx=\"fade\"
-data-cycle-auto-height=false
 data-cycle-caption=\".solofolio-cyclereact-caption\"
-data-cycle-caption-template=\"{{cycleTitle}}\"
-data-cycle-timeout=0>";
+data-cycle-caption-template=\"{{cycleTitle}}\">\n\n";
 
 $i = 0;
+$result = count($attachment_ids) - 1;
+
+foreach ($attachment_ids as $id) {
+
 	
-foreach ( $attachments as $id => $attachment ) {
-	$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
+	// Get attachment metadata
+	$attachment = get_post($id);
 	
-	$link2 = wp_get_attachment_url($id);
+	$link = wp_get_attachment_url($id);	
+	$link2 = wp_get_attachment_url($id);	
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 	$link6 = wp_get_attachment_image_src($id, 'medium');
 	
-	$output .= "
-		
-		<div class=\"solofolio-cycelereact-slide\" data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\">
+	$output .= "<div class=\"solofolio-cycelereact-slide\" data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\">
 		<div class=\"solofolio-cycelereact-fill\" data-picture>
 			<div data-src=\"" . $link6[0] . "\"></div>
 			<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
 			<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>
 			<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 		</div>
-		</div>
-		
-		";
+		</div>\n";
+
+	$i++;
+	
 } // End ForEach
 
-$output .= "</div>";
+$output .= "</div>\n";
 
 $output .="<div class=\"solofolio-cyclereact-image-nav\">
 		<div class=\"solofolio-cyclereact-nav-right next\"></div>
@@ -86,7 +91,7 @@ function sl_cyclereact() {
 		  var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 		  var wrapperWidth = $(\"#wrapper\").innerWidth();
 		  var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-		  $('img').css('max-height', pageHeight - barHeight - 70 - 0);
+		  $('img').css('max-height', pageHeight - barHeight - 60 - 0);
 		  $('img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);

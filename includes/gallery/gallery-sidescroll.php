@@ -27,8 +27,9 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 	
 	$i = 0;
 		
-	foreach ( $attachments as $id => $attachment ) {
-		$link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
+	foreach ($attachment_ids as $id) {
+
+		$attachment = get_post($id);
 		
 		$link2 = wp_get_attachment_url($id);
 		$link3 = wp_get_attachment_image_src($id, 'thumbnail');

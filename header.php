@@ -21,15 +21,15 @@
 	
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>			
 	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.js"></script> 
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/includes/gallery/js/galleria.history.min.js"></script> 
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
-	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.jknav.min.js"></script>
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/includes/gallery/js/galleria.solofolio.css'); ?>" type="text/css" media="screen" />
 	
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo (bloginfo('template_url').'/fonts/font-awesome.min.css'); ?>" />
 	<link rel="stylesheet" type="text/css" media="all" href="<?php echo (bloginfo('template_url').'/fonts/font-awesome-social.css'); ?>" />
@@ -42,17 +42,9 @@
 	<script type="text/javascript"> 
 	$(window).load(function(){
 		$('img').retina();
-		$('#wrapper img').jknav();
-		$.jknav.init();
 		$("p:has(img)").css('margin' , '0');
 		$("p:has(img)").css('padding' , '0');
     	/* Fallback support for older images that were not uploaded with the SoloFolio format filter */
-    	/*if($(this).attr('width')){
-			$('img').each(function() {
-				var mwidth = $(this).attr('width');
-				$(this).attr('style', 'max-width:' + mwidth + 'px');
-			});
-		} else {}*/
 		$('img').each(function() {
 			// Get on screen image
 			var screenImage = $(".wp-caption img");

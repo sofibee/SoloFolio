@@ -33,6 +33,10 @@ body {
 #header {
 	background-color: <?php echo get_theme_mod('solofolio_background_color'); ?>;
 }
+
+.galleria-container .galleria-stage, .galleria-container .galleria-thumbnails-container {
+	background-color: <?php echo get_theme_mod('solofolio_background_color'); ?>;
+}
 	
 /* Links */
 
@@ -273,8 +277,6 @@ input:focus, textarea:focus {
 		position: relative; 
 		top: 0;
 		left: 0;
-		bottom:0px; 
-	  	overflow:auto;
 	}
 	
 		#content-index, #content-single, #content-search {

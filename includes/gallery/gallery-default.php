@@ -5,12 +5,14 @@ Gallery Template: Default (Galleria Slideshow)
 */
 
 $output .= "<script type=\"text/javascript\" src=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.js\"></script>";
-$output .= "<link rel=\"stylesheet\" href=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.css\"/>"; 
+$output .= ""; 
 
 $output .= "<div class=\"galleria-wrap\"><div class=\"galleria galleria-container notouch\">";
 $i = 0;
 
-foreach ( $attachments as $id => $attachment ) {
+foreach ($attachment_ids as $id) {
+
+	$attachment = get_post($id);
 
 	$link2 = wp_get_attachment_url($id);
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
