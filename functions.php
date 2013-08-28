@@ -15,6 +15,10 @@ if(function_exists('register_sidebar')){
 	));
 }
 
+add_theme_support( 'post-thumbnails' ); 
+
+add_image_size( 'about-image', 400, 9999 ); //300 pixels wide (and unlimited height)
+
 /* Disable Admin Bar from frontend - More trouble than it's worth */
 function hide_admin_bar_from_front_end(){
   if (is_blog_admin()) {
