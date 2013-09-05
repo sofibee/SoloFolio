@@ -144,13 +144,12 @@ function solofolio_gallery_shortcode($attr) {
 	}
 	
 	if ($type == "") { 
-		include("gallery/gallery-default.php");
+		include("gallery/gallery-cyclereact.php");
 	}
 	
 	if ($type == "slideshow") { 
 		include("gallery/gallery-default.php");
 	}
-
 			
 	if ($type == "side-scroll") {
 		include("gallery/gallery-sidescroll.php");

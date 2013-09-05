@@ -91,7 +91,7 @@ function sl_cyclereact() {
 		  var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 		  var wrapperWidth = $(\"#wrapper\").innerWidth();
 		  var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-		  $('img').css('max-height', pageHeight - barHeight - 60 - 0);
+		  $('img').css('max-height', pageHeight - barHeight - 70 - 0);
 		  $('img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);
