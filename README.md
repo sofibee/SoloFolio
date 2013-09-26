@@ -45,8 +45,7 @@ USING THE GALLERY
 
 SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] shortcode will accept the following variables:
 
-
-type: slideshow, super, react, side-scroll, vert-scroll (default: slideshow)
+type: cycle-react slideshow, super, react, side-scroll, vert-scroll (default: cycle-react)
 
 SLIDESHOW
 autoplay : true, false (default: false)
@@ -59,28 +58,12 @@ speed : slide duration in ms (default: 9000)
 transition : none, fade, flash, pulse, slide, fadeslide (default: none)	
 
 RECOMMENDED PLUGINS
--Regenerate Thumbnails (you'll need this if you aren't starting fresh)
+-Regenerate Thumbnails
 -Akismet
 -All-in-one SEO
 -Fast Secure Contact Form
--Wordfence
 
-
-THANKS
-
--To Patrick and Aaron, for helping me develop V1.0 in 2009
-
--To the following open source projects, whose code is incorporated in this release:
-	-Galleria
-	-jQuery.Retina
-	-JQuery.jknav
-	-Picturefill
-	-cycle2
-
-
-LICENSE:
-
-In plain english:
+LICENSE TERMS:
 
 1. SoloFolio can be used for both personal and commercial projects.
 
@@ -88,6 +71,5 @@ In plain english:
 
 3. Attribution is appreciated, but not required. You can toggle this setting under SoloFolio > General.
  
-Now for the legalese:
 
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL SOLFOLIO BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
