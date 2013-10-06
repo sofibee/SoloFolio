@@ -105,6 +105,7 @@
 		
 		<div id="header-phone"><a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?></a></div>
 		<div id="header-email"><a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>"><?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?></a></div>  
+		<div id="header-location"><?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?></a></div>
 	</div>
 	<div id="header-content">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Sidebar Layout - Main Navigation") ) : ?>

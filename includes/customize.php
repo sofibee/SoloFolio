@@ -339,6 +339,7 @@ function solofolio_customize_register( $wp_customize )
 			'type'       => 'select',
 			'priority' => '10', // Default is 10.
 			'choices'    => array(
+				'cycle-react' => 'Dynamic',
 				'slideshow' => 'Slideshow',
 				'side-scroll' => 'Side scroll',
 			),

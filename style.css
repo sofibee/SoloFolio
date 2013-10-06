@@ -83,6 +83,11 @@ body {
     text-align: left;
 }
 
+	body#page {
+		overflow: hidden;
+	}
+	
+
 html, body {
 	height: 100%;
 }
@@ -208,11 +213,10 @@ p {
 	background-color: #282828;
 	bottom: 40px;
 	height: 100%;
-	left: 0;
+	left: 20px;
 	margin: 0;
-	padding: 20px 0 0 20px;
 	position: fixed;
-	top: 0;
+	top: 20px;
 	width: 200px;
 	z-index: 5;
 	}
@@ -225,10 +229,15 @@ p {
 	}
 	
 	#header-content {
-		position: relative;
+		/*position: relative;
 		text-align: left;
 		right: 0;
-		width: auto;
+		width: auto;*/
+	}
+	
+	#header-content .solofolio-cyclereact-caption {
+		bottom: 25px;
+		position: absolute;
 	}
 
 	#header-content ul li {
@@ -286,7 +295,7 @@ p {
 		}
 
 #wrapper {
-	padding: 20px 10px 0 0;
+	padding: 0;
 	bottom: 0;
     position: absolute;
     top: 0;
@@ -667,10 +676,6 @@ table tr {
 .solofolio-cyclereact-caption {
 	margin: 0 auto;
 	text-align: left;
-}
-
-#wrapper .solofolio-cyclereact-caption {
-	display: none !important;
 }
 
 #solofolio-cyclereact-bar {

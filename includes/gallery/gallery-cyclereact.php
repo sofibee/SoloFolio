@@ -59,14 +59,14 @@ $output .= "</div>";
 
 $output .= "</div>";
 
-$output .="<div id=\"solofolio-cyclereact-bar\">
+/*$output .="<div id=\"solofolio-cyclereact-bar\">
 <p class=\"solofolio-cyclereact-caption\"></p>
 <div id=\"solofolio-cyclereact-controls\">
 			<p id=\"solofolio-cyclereact-caption\"></p>
         	<!--<a href=\"#\"><span class=\"prev\">< Prev</span></a> 
         	<a href=\"#\"><span class=\"next\">Next ></span></a>-->
     	</div>
-    	</div>";
+    	</div>";*/
 
 
 
@@ -91,7 +91,7 @@ function sl_cyclereact() {
 		  var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 		  var wrapperWidth = $(\"#wrapper\").innerWidth();
 		  var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-		  $('img').css('max-height', pageHeight - barHeight - 70 - 0);
+		  $('img').css('max-height', pageHeight - barHeight - 0 - 0);
 		  $('img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);
