@@ -64,6 +64,19 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '30',
 		) );
 		
+		$wp_customize->add_setting( 'solofolio_location', array(
+			'transport'   => 'postMessage',
+			'default'           => 'Athens, Ohio',
+        ));
+	
+		$wp_customize->add_control( 'solofolio_location', array(
+			'label' => 'Location',
+			'settings' => 'solofolio_location',
+			'section' => 'solofolio_header_section',
+			'type' => 'text',
+			'priority' => '30',
+		) );
+		
 		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
 		
 		$wp_customize->add_control( 'solofolio_header_width', array(
@@ -78,7 +91,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 	
 		$wp_customize->add_control( 'solofolio_footer_text', array(
-			'label' => 'Credit Text',
+			'label' => 'Copyright Text',
 			'settings' => 'solofolio_footer_text',
 			'section' => 'solofolio_header_section',
 			'type' => 'text', // Default is "text"

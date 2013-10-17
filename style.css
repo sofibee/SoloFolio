@@ -86,7 +86,6 @@ body {
 	body#page {
 		overflow: hidden;
 	}
-	
 
 html, body {
 	height: 100%;
@@ -213,10 +212,11 @@ p {
 	background-color: #282828;
 	bottom: 40px;
 	height: 100%;
-	left: 20px;
+	left: 0;
 	margin: 0;
+	padding: 20px 20px 0 20px;
 	position: fixed;
-	top: 20px;
+	top: 0;
 	width: 200px;
 	z-index: 5;
 	}
@@ -246,10 +246,6 @@ p {
 		letter-spacing: 1px;
 		list-style-type: none;
 		padding: 0 0 5px;
-	}
-	
-	#header-phone, #header-email {
-		display: inline;
 	}
 	
 	#header-content div {
@@ -295,7 +291,7 @@ p {
 		}
 
 #wrapper {
-	padding: 0;
+	padding: 20px 0 0 0;
 	bottom: 0;
     position: absolute;
     top: 0;
@@ -581,11 +577,6 @@ div.aligncenter {
   margin: 0 20px 0 0;
   position: relative;
 }
-
-	/* Make sidescroll images retina-friendly! */
-	.sl-sidescroll-container img {
-		width: 100%;
-	}
 
 /* Phone view menu */
 #menu-icon {

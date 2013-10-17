@@ -116,8 +116,12 @@ input:focus, textarea:focus {
 }
 
 .sl-sidescroll-container {
-	margin-right: <?php echo get_theme_mod('solofolio_gallery_sidescroll_padding'); ?>px;
+	padding-right: <?php echo get_theme_mod('solofolio_gallery_sidescroll_padding'); ?>px;
 }
+
+	.sl-sidescroll-container:last-child {
+		padding-right: 0;
+		}
 
 /* Slideshow cursor settings */
 
@@ -164,15 +168,10 @@ input:focus, textarea:focus {
 
 /* LARGE DESKTOP SCREENS - Build a custom wrapper to center blog on big screens */
 @media (min-width: <?php echo (get_theme_mod( 'solofolio_header_width', '200' ) + 900 + 50); ?>px) {
-
-	#outerWrap {
-		position: relative;
-		width: 100%;
-	}
 	
-		#wrapper {
-			max-width: 100%;
-			}
+	#wrapper {
+		max-width: 100%;
+		}
 	
 	#post #outerWrap {
 		margin: 0 auto;
@@ -225,10 +224,15 @@ input:focus, textarea:focus {
 	#header {
 		height: auto;
 		position: relative !important;
-		margin: 0 0 10px 0;
+		margin: 5px 0 10px 5px;
+		top: 0;
 		padding: 0;
 		width: auto;
 	}
+	
+		#logo {
+			padding: 5px 5px 5px 10px;
+		}
 	
 		#logo-img {
 			display: none;
@@ -246,18 +250,23 @@ input:focus, textarea:focus {
 			padding: 0 0 10px 0;
 		}
 		
-		#header #header-phone, #header #header-email {
-			padding-right: 5px;
-		}
-   			
-		#header div {
-			margin: 0;
+		#header-content .solofolio-cyclereact-caption {
+			display: none !important;
 		}
 		
-		#header h3 {
-			margin: 0;
-			padding: 0;
-		}
+			#header #header-phone, #header #header-email, #header #header-location {
+				padding-right: 5px;
+				display: inline;
+			}
+			
+			#header div {
+				margin: 0;
+			}
+		
+			#header h3 {
+				margin: 0;
+				padding: 0;
+			}
 		
 		#sidebar-footer {
 			display: none;
@@ -403,22 +412,6 @@ input:focus, textarea:focus {
 		padding: 0;
 		width: 100%;
 	}
-	
-	#sl-sidescroll-wrap .sl-sidescroll-container {
-		margin: 0 0 20px;
-		max-width: 100% !important;
-		width: 100% !important; /* HACK! Override image widths that were set for Retina iPad */
-		height: auto !important; /* HACK! Override image widths that were set for Retina iPad */
-	}
-	
-		.sl-sidescroll-container img {
-			border: none;
-			width: 100%;
-		}
-		
-		.sl-sidescroll-container p {
-			padding: 2px 10px;
-		}
 	
 	/* Clean up Galleria */
 		

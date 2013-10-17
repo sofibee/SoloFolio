@@ -5,25 +5,19 @@ Gallery Template: Sidescroll
 */
 
 $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
-		$(function(){
-			$(\"#sl-sidescroll-wrap\").wrapInner(\"<table cellspacing=0 ><tr>\");
-			$(\".sl-sidescroll-container\").wrap(\"<td>\");
-		});
 		
-		$( document ).ready( function(){
+		/*$( document ).ready( function(){
     		setMax();
     		$( window ).bind(\"resize\", setMax );
     		function setMax() {
     			$(\".sl-sidescroll-container\").css(\"maxWidth\", ($(\"#wrapper\").innerWidth() - 30));
     		}
 
-});
+});*/
 
 	</script>";
 	
-	
-	
-	$output .="<div id=\"sl-sidescroll-wrap\">";
+	$output .="<table cellspacing=0 ><tbody><tr>";
 	
 	$i = 0;
 		
@@ -35,7 +29,7 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 		$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 		$link4 = wp_get_attachment_image_src($id, 'large');
 
-		$output .= "\n\n<div class=\"sl-sidescroll-container\" style=\"max-width:" . $link4[1] . "px; max-height:" . $link4[2] . "px \">";
+		$output .= "\n\n<td class=\"sl-sidescroll-container\" style=\"max-width:" . $link4[1] . "px; max-height:" . $link4[2] . "px \">";
 		
 		$output .= "
 			
@@ -45,13 +39,20 @@ $output .= "<script type=\"text/javascript\" charset=\"utf-8\">
 			$output .="<p>" .  wptexturize($attachment->post_excerpt) . "</p> ";
 		}
 		
-		$output .= "</div>";
+		$output .= "</td>";
 		
 		$i += 1;
 		
 	} // end foreach
 		
-		/*$output .= "<a href=\"#back-anchor\" id=\"side-scroll-back\"><</a>";*/
-		
-		$output .= "</div>";
+	$output .="</tr></table>";
+	
+	$output.="<style type=\"text/css\">
+	
+	#wrapper {
+		overflow-x: scroll;
+	}
+	
+	</style>";
+	
 ?>
