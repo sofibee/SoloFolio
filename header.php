@@ -128,12 +128,12 @@
 		<?php } ?>
 		
 	</div><!-- /#header-content -->
+	
+	<div id="sidebar-footer">
+		<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
+	</div>
 	<div class="clear"></div>
 	</div>
 </div><!-- /#header -->
-
-<div id="sidebar-footer">
-	<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
-</div>
 
 <div id="wrapper"><!-- Begin Wrapper -->
