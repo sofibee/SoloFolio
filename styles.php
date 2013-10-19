@@ -400,16 +400,28 @@ input:focus, textarea:focus {
 /* Phone */
 @media only screen and (max-width: 440px) {
 	
+	body#page {
+		overflow: auto;
+	}
+	
 	#content h1 {
 		font-size: 14px;
 	}
 	
+	#wrapper {
+		overflow: scroll;
+	}
+	
 	/* Make mobile galleries scroll vertically. */
 	
-	#sl-sidescroll-wrap td {
+	.sl-sidescroll-container {
 		display: block;
 		margin: 0;
 		padding: 0;
+		width: 100%;
+	}
+	
+	.sl-sidescroll-container img {
 		width: 100%;
 	}
 	
