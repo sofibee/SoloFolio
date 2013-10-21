@@ -291,7 +291,7 @@ p {
 		}
 
 #wrapper {
-	padding: 20px 0 0 0;
+	padding: 0
 	bottom: 0;
     position: absolute;
     top: 0;
@@ -409,6 +409,11 @@ h2.post-title {
 		color: #aaaaaa;
 		text-decoration: none;
 	}
+	
+#content-index, #content-single {
+    padding-top: 20px;
+    width: 100%;
+}
 	
 #content-about {
 	max-width: 900px; 

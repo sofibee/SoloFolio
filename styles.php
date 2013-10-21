@@ -187,7 +187,7 @@ input:focus, textarea:focus {
 /* Responsive design */
 
 #content-index, #content-single {
-	width: 100%;
+    width: 100%;
 }
 
 	#content-index .entry .wp-caption {
@@ -423,6 +423,10 @@ input:focus, textarea:focus {
 	
 	.sl-sidescroll-container img {
 		width: 100%;
+	}
+	
+	.sl-sidescroll-container p {
+		line-height: 1.2;
 	}
 	
 	/* Clean up Galleria */
