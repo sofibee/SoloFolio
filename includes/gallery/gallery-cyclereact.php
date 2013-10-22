@@ -60,6 +60,13 @@ $output .= "</div>";
 
 $output .= "</div>";
 
+$output .="<div id=\"solofolio-cyclereact-bar\">
+<p class=\"solofolio-cyclereact-caption\"></p>
+<div id=\"solofolio-cyclereact-controls\">
+			<p id=\"solofolio-cyclereact-caption\"></p>
+    	</div>
+    	</div>";
+
 add_action('wp_footer', 'sl_cyclereact');
  
 function sl_cyclereact() {
@@ -70,8 +77,6 @@ function sl_cyclereact() {
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
 
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
-	
-	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.center.js\"></script>";
 	
 	// Make things fit nicely 
 	$output.="
