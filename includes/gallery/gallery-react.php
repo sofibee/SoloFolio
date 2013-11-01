@@ -13,7 +13,7 @@ foreach ($attachment_ids as $id) {
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 	
-	$helper = get_theme_mod( 'solofolio_header_width' ) + 900; // Sneaky Joel calculates the break point dynamically!
+	$helper = get_theme_mod( 'solofolio_header_width' ) + 900; // Calculates the break point dynamically
 	
 	$output .= "
 		
@@ -47,7 +47,7 @@ function sl_react() {
 		var setResponsive = function () {
 		  var pageHeight = jQuery(window).height();
 		  var blockHeight = $(\".sl-react-caption\").outerHeight();
-		  $('.sl-react img').css('max-height', pageHeight - blockHeight - 70); 
+		  $('.sl-react img').css('max-height', pageHeight - blockHeight); 
 		}
 		$(window).resize(setResponsive);
 		setResponsive();

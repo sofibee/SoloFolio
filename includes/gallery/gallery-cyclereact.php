@@ -79,22 +79,33 @@ function sl_cyclereact() {
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
 	
 	// Make things fit nicely 
+	
 	$output.="
 	<script type=\"text/javascript\"> 
 	$(window).load(function(){
 		var setResponsive = function () {
-		  var pageHeight = jQuery(window).height();
-		  var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
-		  var wrapperWidth = $(\"#wrapper\").innerWidth();
-		  var imgHeight = $(\".cycle-slide-active div img\").outerHeight();
-		  var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-		  $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 0 - 0);
-		  $('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
+			var pageHeight = jQuery(window).height();
+			var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
+			var headerHeight = $(\"#header\").outerHeight();
+			var wrapperWidth = $(\"#wrapper\").innerWidth();
+			var imgHeight = $(\".cycle-slide-active div img\").outerHeight();
+			var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
+			
+			var n = $(\"#header\").css('right');
+
+			if (n == '0px') {
+				$('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight - 20);
+			} 
+			else {
+				$('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight);
+			}
+			console.log('n: ' + n);
+			console.log('barHeight: ' + barHeight);
+			console.log('pageHeight: ' + pageHeight); 
+			$('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);
 		setResponsive();
-
-		
 	});</script>";
 	
 	// Allow keyboard control

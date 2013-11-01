@@ -170,10 +170,6 @@ h2 {
 	margin: 0 0 10px 0;
 	padding: 0 0 3px 0; 
 }
-	.post-title h2 {
-		font-weight: bold;
-		margin-bottom: 5px;
-	}
 
 h3 {
 	font-size: 18px;
@@ -282,7 +278,7 @@ p {
 	#header-content {
 	}
 		
-		#header-phone, #header-email {
+		#header-phone, #header-email, #header-location {
 			margin-right: 0px;
 		}
 		
@@ -398,6 +394,8 @@ p {
 h2.post-title {
 	font-size: 24px;
 	font-weight: normal;
+	margin: 0;
+	padding: 0;
 }
 
 	h2.post-title a {
