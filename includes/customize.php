@@ -343,7 +343,7 @@ function solofolio_customize_register( $wp_customize )
 		'description' => 'Gallery options',
 	) );
 	
-		$wp_customize->add_setting('solofolio_gallery_default', array('default' => 'slideshow'));
+		$wp_customize->add_setting('solofolio_gallery_default', array('default' => 'cycle-react'));
  
 		$wp_customize->add_control('solofolio_gallery_default', array(
 			'label'      => __('Default gallery format'),

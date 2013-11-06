@@ -6,6 +6,9 @@ Gallery Template: Cycle-React (Picturefill + jQuery Cycle hack)
 
 */
 
+global $solofolio_autoplay;
+
+
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
 $output .="<div id=\"solofolio-cyclereact-stage\">";
@@ -13,9 +16,11 @@ $output .="<div id=\"solofolio-cyclereact-stage\">";
 $output .="<div id=\"solofolio-cyclereact-images\" class=\"cycle-slideshow manual\" data-cycle-slides=\"div.solofolio-cycelereact-slide\"
 data-cycle-prev=\".prev\"
 data-cycle-next=\".next\"
-data-cycle-auto-height=0
-data-cycle-timeout=0
-data-cycle-center-vert=true
+data-cycle-auto-height=0\n";
+
+if ($solofolio_autoplay == "true"){ $output .= "Autoplay";} else {$output.= "data-cycle-timeout=0\n";}
+
+$output .="data-cycle-center-vert=true
 data-cycle-fx=\"fade\"
 data-cycle-caption=\".solofolio-cyclereact-caption\"
 data-cycle-caption-template=\"{{cycleTitle}}\">\n\n";
@@ -101,6 +106,7 @@ function sl_cyclereact() {
 			}
 			console.log('n: ' + n);
 			console.log('barHeight: ' + barHeight);
+			console.log('imgHeight: ' + imgHeight); 
 			console.log('pageHeight: ' + pageHeight); 
 			$('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
 		}

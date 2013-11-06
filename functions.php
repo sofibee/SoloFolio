@@ -82,10 +82,4 @@ include_once("includes/social-widget.php");		// Include social media widget
 include_once("includes/caption-widget.php");		// Include caption media widget
 include_once("includes/customize.php");			// Include WP_customize structure
 
-add_action ('admin_menu', 'solofolio_customize');
-function solofolio_customize() {
-    // add the Customize link to the admin menu
-    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
-}
-
 ?>
