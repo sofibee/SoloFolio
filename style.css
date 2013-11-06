@@ -2,7 +2,7 @@
 Theme Name: SoloFolio5
 Theme URI: http://www.solofolio.net/
 Description: A portfolio platform for creatives.
-Version: 5.0-20131101
+Version: 5.0-20131106
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 
@@ -197,7 +197,7 @@ h6 {
 }	
 
 p {
-	line-height: 28px;
+	line-height: 1.5;
 	margin: 0 0 1em;
 	padding: 0;
 	max-width: 600px;
