@@ -91,6 +91,10 @@ html, body {
 	height: 100%;
 }
 
+strong {
+    font-weight: bold;
+}
+
 /* Options - Fonts */
 .sans {
 	font-family: Helvetica,Verdana,Arial,Utkal,sans-serif;
