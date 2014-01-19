@@ -1,16 +1,7 @@
 <?php
-/* 
-
-SoloFolio
-Gallery Template: Cycle-React (Picturefill + jQuery Cycle hack)
-
-*/
-
 global $solofolio_autoplay;
 
-
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
-
 $output .="<div id=\"solofolio-cyclereact-stage\">";
 
 $output .="<div id=\"solofolio-cyclereact-images\" class=\"cycle-slideshow manual\" data-cycle-slides=\"div.solofolio-cycelereact-slide\"
@@ -30,17 +21,17 @@ $result = count($attachment_ids) - 1;
 
 foreach ($attachment_ids as $id) {
 
-	
+
 	// Get attachment metadata
 	$attachment = get_post($id);
-	
-	$link = wp_get_attachment_url($id);	
-	$link2 = wp_get_attachment_url($id);	
+
+	$link = wp_get_attachment_url($id);
+	$link2 = wp_get_attachment_url($id);
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 	$link6 = wp_get_attachment_image_src($id, 'medium');
-	
+
 	$output .= "<div class=\"solofolio-cycelereact-slide\" data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\">
 		<div class=\"solofolio-cycelereact-fill\" data-picture>
 			<div data-src=\"" . $link6[0] . "\"></div>
@@ -51,7 +42,7 @@ foreach ($attachment_ids as $id) {
 		</div>\n";
 
 	$i++;
-	
+
 } // End ForEach
 
 $output .= "</div>\n";
@@ -73,51 +64,46 @@ $output .="<div id=\"solofolio-cyclereact-bar\">
     	</div>";
 
 add_action('wp_footer', 'sl_cyclereact');
- 
+
 function sl_cyclereact() {
-	
+
 	// Output necessary JS. This can't be mobile friendly.
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/matchmedia.js\"></script>";
-
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
-
 	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
-	
-	// Make things fit nicely 
-	
+
+	// Make things fit nicely
+
 	$output.="
-	<script type=\"text/javascript\"> 
+	<script type=\"text/javascript\">
 	$(window).load(function(){
 		var setResponsive = function () {
 			var pageHeight = jQuery(window).height();
-			var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 			var headerHeight = $(\"#header\").outerHeight();
 			var wrapperWidth = $(\"#wrapper\").innerWidth();
 			var imgHeight = $(\".cycle-slide-active div img\").outerHeight();
 			var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-			
+
 			var n = $(\"#header\").css('right');
 
 			if (n == '0px') {
+				var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
 				$('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight - 20);
-			} 
+			}
 			else {
+				var barHeight = 0;
 				$('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight);
 			}
-			console.log('n: ' + n);
-			console.log('barHeight: ' + barHeight);
-			console.log('imgHeight: ' + imgHeight); 
-			console.log('pageHeight: ' + pageHeight); 
 			$('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
 		}
 		$(window).resize(setResponsive);
 		setResponsive();
 	});</script>";
-	
+
 	// Allow keyboard control
 	$output.="<script type=\"text/javascript\">$(document.documentElement).keyup(function (e) {
 		if (e.keyCode == 39)
-		{        
+		{
 		   $('#solofolio-cyclereact-images').cycle('next');
 		}
 
@@ -127,17 +113,17 @@ function sl_cyclereact() {
 		}
 
 	});</script>";
-	
-	$output.="<style type=\"text/css\">
-	
 
-	
+	$output.="<style type=\"text/css\">
+
+
+
 	</style>";
-	
-	
-     
+
+
+
     echo $output;
- 
+
 }
 
 ?>
