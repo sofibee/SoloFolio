@@ -63,67 +63,15 @@ $output .="<div id=\"solofolio-cyclereact-bar\">
     	</div>
     	</div>";
 
-add_action('wp_footer', 'sl_cyclereact');
+add_action('wp_footer', 'sl_cyclereact_js');
 
-function sl_cyclereact() {
+function sl_cyclereact_js() {
+	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/matchmedia.js\"></script>";
+	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
+	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
+	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/cyclereact.js\"></script>";
 
-	// Output necessary JS. This can't be mobile friendly.
-	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/matchmedia.js\"></script>";
-	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
-	$output .="<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
-
-	// Make things fit nicely
-
-	$output.="
-	<script type=\"text/javascript\">
-	$(window).load(function(){
-		var setResponsive = function () {
-			var pageHeight = jQuery(window).height();
-			var headerHeight = $(\"#header\").outerHeight();
-			var wrapperWidth = $(\"#wrapper\").innerWidth();
-			var imgHeight = $(\".cycle-slide-active div img\").outerHeight();
-			var imgWidth = $(\".cycle-slide-active div img\").outerWidth();
-
-			var n = $(\"#header\").css('right');
-
-			if (n == '0px') {
-				var barHeight = $(\"#solofolio-cyclereact-bar\").outerHeight();
-				$('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight - 20);
-			}
-			else {
-				var barHeight = 0;
-				$('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight);
-			}
-			$('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
-		}
-		$(window).resize(setResponsive);
-		setResponsive();
-	});</script>";
-
-	// Allow keyboard control
-	$output.="<script type=\"text/javascript\">$(document.documentElement).keyup(function (e) {
-		if (e.keyCode == 39)
-		{
-		   $('#solofolio-cyclereact-images').cycle('next');
-		}
-
-		if (e.keyCode == 37)
-		{
-			$('#solofolio-cyclereact-images').cycle('prev');
-		}
-
-	});</script>";
-
-	$output.="<style type=\"text/css\">
-
-
-
-	</style>";
-
-
-
-    echo $output;
-
+  echo $output;
 }
 
 ?>
