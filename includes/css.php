@@ -1,0 +1,201 @@
+<?php
+add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
+add_action( 'wp_head', 'solofolio_css_cache', 199 );
+
+function solofolio_css_cache_reset() {
+  delete_transient( 'solofolio_css' );
+}
+
+function solofolio_css_cache() {
+  $data = get_transient( 'solofolio_css' );
+  if ( $data === false ) {
+    $data = solofolio_css();
+    set_transient( 'solofolio_css', $data, 3600 * 24 );
+  }
+  echo $data;
+}
+
+function solofolio_css() {
+  $styles .= "<style>";
+  $styles .= file_get_contents(get_bloginfo('template_url') . "/css/base.css");
+
+  $styles .= "
+  #header {
+    width: " . get_theme_mod( 'solofolio_header_width', '200') . "px;
+  }\n";
+
+  if (get_theme_mod('solofolio_logo') == '') {
+    $styles .= "
+    #logo-noimg {
+      display: block;
+    }
+
+    #logo-img {
+      display: none;
+    }\n";
+  }
+
+  $styles .= "
+  body {
+    background-color: ". get_theme_mod('solofolio_background_color') . ";
+    color: " . get_theme_mod('solofolio_body_font_color') . ";
+    font-size: " . get_theme_mod('solofolio_body_font_size') .";
+  }
+
+  #header {
+    background-color: " . get_theme_mod('solofolio_background_color') . ";
+  }
+
+  .galleria-container .galleria-stage, .galleria-container .galleria-thumbnails-container {
+    background-color: " . get_theme_mod('solofolio_background_color') . ";
+  }
+
+  a:link, a:visited {
+    color: " . get_theme_mod('solofolio_body_link_color') . ";
+  }
+
+  a:hover, a:active {
+    color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
+  }
+
+  #header-content li a {
+    font-size: " . get_theme_mod('solofolio_navigation_font_size') . ";
+  }
+
+  #header-content h3 {
+    color: " . get_theme_mod('solofolio_navigation_header_color') . ";
+    font-size: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
+  }
+
+  #header-content a:link, #header-content a:visited {
+    color: " . get_theme_mod('solofolio_navigation_link_color') . ";
+  }
+
+  #header-content a:hover, #header-content a:active {
+    color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
+  }
+
+  h2.post-title {
+    font-size: " . get_theme_mod('solofolio_blog_entry_title_size') . ";
+  }
+
+  h2.post-title, h2.post-title a {
+    color: " . get_theme_mod('solofolio_blog_entry_title_color') . ";
+  }
+
+  .post-title a:hover {
+    color: " . get_theme_mod('solofolio_blog_entry_title_color_hover') . ";
+  }
+
+  .date, .post-cat {
+    color: " . get_theme_mod('solofolio_blog_entry_byline_color') . ";
+  }
+
+  .wp-caption p.wp-caption-text, .solofolio-caption {
+    color: " . get_theme_mod('solofolio_body_caption_color') . ";
+  }
+
+  /* Highlight current page item */
+
+  #header #header-content .current_page_item a, #header #header-content .current_page_parent a {
+    color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
+    }
+
+  #footer ul li a:hover {
+    color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
+  }
+
+  /* Forms */
+
+  input, textarea {
+    background-color: inherit;
+  }
+
+  input:focus, textarea:focus {
+  }
+
+  /* Gallery Styles */
+
+  .galleria-info {
+    color: " . get_theme_mod('solofolio_body_caption_color') . ";
+  }
+
+  .sl-sidescroll-container {
+    padding-right: " . get_theme_mod('solofolio_gallery_sidescroll_padding') . "px;
+  }
+
+    .sl-sidescroll-container:last-child {
+      padding-right: 0;
+      }
+  ";
+
+  if (get_theme_mod('solofolio_gallery_cursor_color') == 'light') {
+    $styles .= "
+    .galleria-image-nav-left {
+      cursor: url(\"img/prev.light.cur\"), move;
+
+    }
+    .galleria-image-nav-right {
+      cursor: url(\"img/next.light.cur\"), move;
+      }";
+  } else {
+    $styles .= "
+    .galleria-image-nav-left {
+      cursor: url(\"img/prev.dark.cur\"), move;
+    }
+
+    .galleria-image-nav-right {
+      cursor: url(\"img/next.dark.cur\"), move;
+    }";
+  }
+
+  if (get_theme_mod('solofolio_gallery_icon_color') == 'dark') {
+    $styles .= "
+    .galleria-controls .galleria-counter, .galleria-controls a {
+      color: #000000;
+    }
+
+    .galleria-thumbnails-container {
+      background-color: #ffffff;
+    }";
+  }
+
+  $styles .= "
+  #wrapper {
+    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
+    width: auto;
+  }
+
+  @media (min-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 900 + 50) . "px) {
+    #wrapper {
+      max-width: 100%;
+      }
+
+    #post #outerWrap {
+      margin: 0 auto;
+      position: relative;
+      max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 920 + 40) . "px;
+    }
+
+    #post #header {
+      left: auto;
+    }
+  }";
+
+  $styles .= file_get_contents(get_bloginfo('template_url') . "/css/breakpoints.css");
+
+  $styles .= "</style>";
+
+  // Remove comments
+  $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
+
+  // Remove space after colons
+  $styles = str_replace(': ', ':', $styles);
+
+  // Remove whitespace
+  $styles = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $styles);
+
+  return $styles;
+}
+
+?>

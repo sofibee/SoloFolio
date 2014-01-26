@@ -27,8 +27,6 @@
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-	<link rel="stylesheet" href="<?php echo (bloginfo('template_url').'/styles.php'); ?>" type="text/css" media="screen" />
-
 	<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
 		<style type="text/css">
 			<?php echo get_theme_mod( 'solofolio_css' ) ?>
@@ -57,7 +55,13 @@
 
 		<div id="logo">
 			<div id="logo-img">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" data-retina="<?php echo get_theme_mod( 'solofolio_logo_retina' ); ?>" /></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+					 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+					 rel="home">
+					 <img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>"
+					 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+					 			data-retina="<?php echo get_theme_mod( 'solofolio_logo_retina' ); ?>" />
+				</a>
 			</div>
 
 			<div id="logo-noimg">

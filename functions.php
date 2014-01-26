@@ -4,13 +4,15 @@ include_once("includes/gallery.php");     // Include gallery shortcode replaceme
 include_once("includes/social-widget.php");   // Include social media widget
 include_once("includes/caption-widget.php");    // Include caption media widget
 include_once("includes/customize.php");     // Include WP_customize structure
+include_once("includes/css.php");
 
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'about-image', 400, 600 );
-add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
-add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
+
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
-add_filter('the_content', 'filter_ptags_on_images');
+add_filter( 'the_content', 'filter_ptags_on_images' );
+add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
+add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 
 // Disable Admin Bar from frontend - More trouble than it's worth
 function hide_admin_bar_from_front_end() {
@@ -76,5 +78,4 @@ if(function_exists('register_sidebar')){
     'after_title' => '</h3>',
   ));
 }
-
 ?>

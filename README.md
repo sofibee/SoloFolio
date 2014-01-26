@@ -28,7 +28,7 @@ USING THE GALLERY
 
 SoloFolio piggy-backs on the built-in WordPress gallery manager. The [gallery] shortcode will accept the following variables:
 
-type: cycle-react slideshow, super, react, side-scroll, vert-scroll (default: cycle-react)
+type: cycle-react, slideshow, react, side-scroll, vert-scroll (default: cycle-react)
 
 SLIDESHOW
 
