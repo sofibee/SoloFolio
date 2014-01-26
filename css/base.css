@@ -238,7 +238,7 @@ p {
 
     #logo-noimg {
       display: none;
-      margin: 0;
+      margin: 0 0 5px 0;
     }
 
   #header-content {
@@ -547,17 +547,21 @@ div.aligncenter {
 /* Phone view menu */
 #menu-icon {
   width: 60px;
-  height: 40px;
-  line-height: 40px;
   font-size: 20px;
   border: 0;
-  padding: 0;
+  padding: 0 10px 0 0;
   position: absolute;
   right: 0;
   top: 0;
+  bottom: 0;
   cursor: pointer;
   text-align: center;
   display: none;
+}
+
+#menu-icon .icon-reorder {
+  line-height: 53px;
+  font-size: 22px;
 }
 
 /* Side scroll gallery */
@@ -656,4 +660,17 @@ table tr {
 /* Centering */
 #outerWrap {
   min-height: 100%;
+}
+
+#content-index, #content-single {
+    width: 100%;
+}
+
+  #content-index .entry .wp-caption {
+    width: 100%;
+  }
+
+#content-page p img {
+  height: auto;
+    width: 100%;
 }
