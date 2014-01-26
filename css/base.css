@@ -615,17 +615,6 @@ table tr {
   width: auto;
 }
 
-.solofolio-cyclereact-nav-left {
-  cursor: url("img/prev.dark.cur"), move;
-    left: 0;
-    width: 50%;
-}
-
-.solofolio-cyclereact-nav-right {
-  cursor: url("img/next.dark.cur"), move;
-    right: 0;
-    width: 50%;
-}
 .solofolio-cyclereact-nav-left, .solofolio-cyclereact-nav-right {
     height: 100%;
     position: absolute;
@@ -633,6 +622,15 @@ table tr {
     bottom: 0;
     z-index: 5;
 }
+  .solofolio-cyclereact-nav-left {
+    left: 0;
+    width: 50%;
+  }
+
+  .solofolio-cyclereact-nav-right {
+    right: 0;
+    width: 50%;
+  }
 
 .solofolio-cycelereact-slide {
   right: 0;

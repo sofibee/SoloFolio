@@ -22,7 +22,7 @@ $(window).load(function(){
   setResponsive();
 });
 
-$(document.documentElement).keyup(function (e) {
-  if (e.keyCode == 39) { $('#solofolio-cyclereact-images').cycle('next') }
-  if (e.keyCode == 37) { $('#solofolio-cyclereact-images').cycle('prev') }
+jQuery(document.documentElement).keyup(function (e) {
+  if (e.keyCode == 39) { jQuery('#solofolio-cyclereact-images').cycle('next') }
+  if (e.keyCode == 37) { jQuery('#solofolio-cyclereact-images').cycle('prev') }
 });
