@@ -26,13 +26,12 @@ function solofolio_css() {
 
   if (get_theme_mod('solofolio_logo') == '') {
     $styles .= "
-    #logo-noimg {
-      display: block;
-    }
-
-    #logo-img {
-      display: none;
-    }\n";
+    #logo-noimg { display: block; }
+    #logo-img   { display: none; }\n";
+  } else {
+    $styles .= "
+    #logo-noimg { display: none; }
+    #logo-img   { display: block;}\n";
   }
 
   $styles .= "
@@ -186,13 +185,8 @@ function solofolio_css() {
 
   $styles .= "</style>";
 
-  // Remove comments
   $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
-
-  // Remove space after colons
   $styles = str_replace(': ', ':', $styles);
-
-  // Remove whitespace
   $styles = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $styles);
 
   return $styles;

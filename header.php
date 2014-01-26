@@ -26,8 +26,6 @@
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/solofolio-base.js"></script>
 	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
 
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-
 	<?php wp_head(); ?>
 
 	<!--[if IE 7]>
@@ -39,6 +37,7 @@
 		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 	<![endif]-->
 
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
 	<style type="text/css">
 		<?php echo get_theme_mod( 'solofolio_css' ) ?>
