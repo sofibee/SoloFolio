@@ -405,6 +405,10 @@ input:focus, textarea:focus {
 		overflow: scroll;
 	}
 
+	.entry img {
+		max-width: 100%;
+	}
+
 	/* Make mobile galleries scroll vertically. */
 
 	.sl-sidescroll {
