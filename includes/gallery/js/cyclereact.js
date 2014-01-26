@@ -10,11 +10,11 @@ $(window).load(function(){
 
     if (n == '0px') {
       var barHeight = $("#solofolio-cyclereact-bar").outerHeight();
-      $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight - 20);
+      $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight);
     }
     else {
       var barHeight = 0;
-      $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight);
+      $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 40);
     }
     $('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
   }

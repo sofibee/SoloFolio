@@ -197,7 +197,7 @@ p {
   }
 
   #header-content .solofolio-cyclereact-caption {
-    bottom: 25px;
+    bottom: 35px;
     position: absolute;
     max-width: 200px;
   }
@@ -256,8 +256,8 @@ p {
   padding: 0;
   bottom: 0;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 20px;
   left: 270px;
 }
 
@@ -375,7 +375,6 @@ h2.post-title {
   }
 
 #content-index, #content-single, #content-search {
-    padding-top: 20px;
     width: 100%;
 }
 
