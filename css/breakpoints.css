@@ -178,7 +178,7 @@
   }
 
     .post-meta, .wp-caption-text, .entry p {
-      padding: 0 10px;
+      padding: 0 15px;
     }
 
   #wrapper {
@@ -192,7 +192,6 @@
   #menu-icon {
     display: block;
   }
-
 }
 
 @media only screen and (max-width: 440px) {
