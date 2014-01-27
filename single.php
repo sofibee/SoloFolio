@@ -17,8 +17,8 @@
 			</div>
 		<?php endwhile; ?>
 		<div class="pagination-nav">
-			<div class="left"><p><?php previous_post('<i class="icon-angle-left"></i> %', '', 'yes') ?></p></div>
-			<div class="right"><p><?php next_post('% <i class="icon-angle-right"></i>', '', 'yes') ?></p></div>
+			<div class="left"><?php previous_post_link('%link', '<i class="icon-angle-left"></i> %title'); ?></div>
+			<div class="right"><?php next_post_link('%link', '%title <i class="icon-angle-right"></i>'); ?></p></div>
 			<div class="clear"></div>
 		</div>
 		<div id="comments">

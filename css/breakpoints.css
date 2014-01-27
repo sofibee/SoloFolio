@@ -109,6 +109,10 @@
       border: none;
       }
 
+    .pagination-nav a {
+      padding: 15px;
+    }
+
   #sidebar-footer {
     position: relative;
     height: auto;
