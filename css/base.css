@@ -24,9 +24,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-body {
-  line-height: 1.2;
-}
 ol, ul {
   list-style: none;
 }
@@ -44,12 +41,14 @@ table {
 }
 
 body {
-  font-family: Helvetica, Verdana, Arial, Utkal, sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, Verdana, Arial, Utkal, sans-serif;
   -webkit-text-size-adjust: 100%;
+  font-weight: normal;
   font-size: 16px;
+  line-height: 1.3;
   margin: 0;
   padding: 0;
-    text-align: left;
+  text-align: left;
 }
 
   body#page {
@@ -62,15 +61,6 @@ html, body {
 
 strong {
     font-weight: bold;
-}
-
-/* Options - Fonts */
-.sans {
-  font-family: Helvetica,Verdana,Arial,Utkal,sans-serif;
-}
-
-.serif {
-  font-family: georgia,"times new roman",times,serif;
 }
 
 /* Floats */
@@ -212,7 +202,11 @@ p {
     font-weight: normal;
     letter-spacing: 1px;
     list-style-type: none;
-    padding: 0 0 5px;
+  }
+
+  #header-content ul li a {
+    display: inline-block;
+    padding: 4px 0;
   }
 
   #header-content div {
@@ -237,13 +231,17 @@ p {
       font-size: 24px;
       }
 
+      #logo h1 a {
+        font-weight: bold;
+      }
+
     #logo img {
       border: none;
     }
 
     #logo-noimg {
       display: none;
-      margin: 0 0 5px 0;
+      margin: 0 0 1em 0;
     }
 
   #header-content {
@@ -297,6 +295,7 @@ p {
 
 #header h1 {
   font-weight: bold;
+  line-height: 1;
   margin: 0;
   padding: 0;
 }
@@ -340,25 +339,25 @@ p {
 
 /* Blog Posts */
 .entry {
-  margin: 0 0 30px;
+  margin: 0 0 50px;
   overflow: hidden;
 }
 
 .post-meta {
-  margin: 0 0 .7em;
+  margin-bottom: 1em;
 }
 
-.meta-cat {
-  margin: 0 0 0 1em;
-}
+  .meta-cat {
+    margin: 0 0 0 1em;
+  }
 
-.post-cat {
-  text-transform: uppercase;
-}
+  .post-cat {
+    text-transform: uppercase;
+  }
 
 .date, .post-cat, .meta-cat {
   color: #CCCCCC;
-  font-size: 10px;
+  font-size: 14px;
   padding: 0;
 }
 
@@ -408,6 +407,11 @@ h2.post-title {
 
 input, textarea {
   border: 1px solid #AAAAAA;
+  margin: 0;
+}
+
+#comments {
+  padding-bottom: 20px;
 }
 
 #comments .date {
@@ -437,7 +441,7 @@ input, textarea {
 }
 
 #commentform p {
-  margin: 5px 0;
+  margin: 10px 0 0 0;
 }
 
 .nocomments {
@@ -483,6 +487,14 @@ div.aligncenter {
   margin-right: auto;
 }
 
+.entry img {
+  margin: 1em 0;
+}
+
+  .entry .wp-caption img {
+    margin: 0;
+  }
+
 .alignleft {
   float: left;
 }
@@ -493,19 +505,18 @@ div.aligncenter {
 
 .wp-caption {
   text-align: left;
-  margin: 0 0 5px 0;
+  margin: 0 0 1em 0;
 }
 
-.wp-caption img {
-  margin: 0;
-  padding: 0;
-}
-
-.wp-caption-text {
-  padding-bottom: 5px;
-  line-height: 18px;
+.caption, .wp-caption-text {
+  font-size: 13px;
+  line-height: 1.4;
   padding-top: 2px;
 }
+
+  .entry .wp-caption-text {
+    max-width: 900px;
+  }
 
 .pagination-nav {
   margin: 0 auto;

@@ -124,7 +124,7 @@ function solofolio_customize_register( $wp_customize )
 		)));
 
 		$wp_customize->add_setting( 'solofolio_body_font_size', array(
-			'default' => '14px',
+			'default' => '16px',
 			'transport'   => 'postMessage',
         ));
 
@@ -192,7 +192,7 @@ function solofolio_customize_register( $wp_customize )
 	) );
 
 		$wp_customize->add_setting( 'solofolio_navigation_font_size', array(
-			'default' => '12px',
+			'default' => '14px',
 			'transport'   => 'postMessage',
         ));
 
