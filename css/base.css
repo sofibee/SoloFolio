@@ -187,6 +187,7 @@ p {
   }
 
   #header-content .solofolio-cyclereact-sidebar {
+    display: none;
     bottom: 20px;
     position: absolute;
     max-width: 200px;
