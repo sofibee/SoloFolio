@@ -13,6 +13,16 @@ add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
+add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
+
+/**
+ * Register style sheet.
+ */
+function register_solofolio_styles() {
+  $uploads = wp_upload_dir();
+  wp_register_style('solofolio', $uploads['baseurl'] . '/solofolio.css', 'style');
+  wp_enqueue_style( 'solofolio' );
+}
 
 // Disable Admin Bar from frontend - More trouble than it's worth
 function hide_admin_bar_from_front_end() {

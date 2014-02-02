@@ -1,22 +1,13 @@
 <?php
-add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
-add_action( 'wp_head', 'solofolio_css_cache', 199 );
-
-function solofolio_css_cache_reset() {
-  delete_transient( 'solofolio_css' );
-}
+add_action( 'customize_preview_init', 'solofolio_css_cache' );
 
 function solofolio_css_cache() {
-  $data = get_transient( 'solofolio_css' );
-  if ( $data === false ) {
-    $data = solofolio_css();
-    set_transient( 'solofolio_css', $data, 3600 * 24 );
-  }
-  echo $data;
+  $data = solofolio_css();
+  $uploads = wp_upload_dir();
+  file_put_contents($uploads['basedir'] . '/solofolio.css', $data);
 }
 
 function solofolio_css() {
-  $styles .= "<style>";
   $styles .= file_get_contents(get_bloginfo('template_url') . "/css/base.css");
 
   $styles .= "
@@ -182,8 +173,6 @@ function solofolio_css() {
   }";
 
   $styles .= file_get_contents(get_bloginfo('template_url') . "/css/breakpoints.css");
-
-  $styles .= "</style>";
 
   $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
   $styles = str_replace(': ', ':', $styles);
