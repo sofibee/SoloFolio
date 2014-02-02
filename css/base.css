@@ -196,11 +196,16 @@ p {
     width: auto;
   }
 
-  #header-content .solofolio-cyclereact-caption {
-    bottom: 35px;
+  #header-content .solofolio-cyclereact-sidebar {
+    bottom: 20px;
     position: absolute;
     max-width: 200px;
+    width: 100%;
   }
+
+    #header-content .solofolio-cyclereact-caption {
+      padding-bottom: 10px;
+    }
 
   #header-content ul li {
     font-size: 12px;

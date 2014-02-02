@@ -11,8 +11,7 @@ data-cycle-auto-height=0\n";
 
 if ($solofolio_autoplay == "true"){ $output .= "Autoplay";} else {$output.= "data-cycle-timeout=0\n";}
 
-$output .="data-cycle-center-vert=true
-data-cycle-fx=\"fade\"
+$output .="data-cycle-fx=\"fade\"
 data-cycle-caption=\".solofolio-cyclereact-caption\"
 data-cycle-caption-template=\"{{cycleTitle}}\">\n\n";
 
