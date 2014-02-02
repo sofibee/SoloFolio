@@ -238,6 +238,7 @@ p {
 
     #logo img {
       border: none;
+      width: 100%;
     }
 
     #logo-noimg {
@@ -490,6 +491,7 @@ div.aligncenter {
 
 .entry img {
   margin: 1em 0;
+  width: 100%;
 }
 
   .entry .wp-caption img {

@@ -33,7 +33,6 @@ jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, op
   setResponsive();
 });
 
-
 jQuery(document.documentElement).keyup(function (e) {
   if (e.keyCode == 39) { jQuery('#solofolio-cyclereact-images').cycle('next') }
   if (e.keyCode == 37) { jQuery('#solofolio-cyclereact-images').cycle('prev') }

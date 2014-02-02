@@ -1,11 +1,11 @@
 $(window).load(function(){
-  $('img').retina();
   $("p:has(img)").css('margin' , '0');
   $("p:has(img)").css('padding' , '0');
-    /* Fallback support for older images that were not uploaded with the SoloFolio format filter */
+
+  /* Fallback support for older images that were not uploaded with the SoloFolio format filter */
   $('img').each(function() {
     // Get on screen image
-    var screenImage = $(".wp-caption img");
+    var screenImage = $(this);
 
     // Create new offscreen image to test
     var theImage = new Image();
@@ -18,12 +18,16 @@ $(window).load(function(){
       $(this).attr('style', 'max-width:' + imageWidth + 'px');
     }
   });
+
   $('img').each(function(){
-        $(this).removeAttr('width')
-        $(this).removeAttr('height');
-    });
-    $('#menu-icon').click(function(){
-  $("#header-content").slideToggle();
+    $(this).removeAttr('width')
+    $(this).removeAttr('height');
+  });
+
+  $('img').retina();
+
+  $('#menu-icon').click(function(){
+    $("#header-content").slideToggle();
     $(this).toggleClass("active");
   });
 });
