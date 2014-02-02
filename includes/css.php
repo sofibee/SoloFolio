@@ -1,5 +1,5 @@
 <?php
-add_action( 'customize_preview_init', 'solofolio_css_cache' );
+add_action( 'customize_save_after', 'solofolio_css_cache' );
 
 function solofolio_css_cache() {
   $data = solofolio_css();
