@@ -2,6 +2,11 @@
 
 <div id="content-index">
 	<?php if (have_posts()) : ?>
+
+		<?php if (is_search()) : ?>
+			<h2>Search Results</h2>
+		<?php endif; ?>
+
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="entry">
 				<div class="post-meta">
@@ -17,11 +22,24 @@
 				<div class="clear"></div>
 			</div>
 		<?php endwhile; ?>
-		<div class="pagination-nav">
-			<div class="left"><p><?php next_posts_link('<i class="icon-angle-left"></i> Past') ?></p></div>
-			<div class="right"><p><?php previous_posts_link('Future <i class="icon-angle-right"></i>') ?></p></div>
-			<div class="clear"></div>
-		</div>
+
+		<?php if (is_single()) : ?>
+			<div class="pagination-nav">
+				<div class="left"><?php previous_post_link('%link', '<i class="icon-angle-left"></i> %title'); ?></div>
+				<div class="right"><?php next_post_link('%link', '%title <i class="icon-angle-right"></i>'); ?></p></div>
+				<div class="clear"></div>
+			</div>
+			<div id="comments">
+				<?php comments_template(); ?>
+			</div>
+		<?php else : ?>
+			<div class="pagination-nav">
+				<div class="left"><?php next_posts_link('<i class="icon-angle-left"></i> Past') ?></div>
+				<div class="right"><?php previous_posts_link('Future <i class="icon-angle-right"></i>') ?></div>
+				<div class="clear"></div>
+			</div>
+		<?php endif; ?>
+
 	<?php endif; ?>
 </div>
 
