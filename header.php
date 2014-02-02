@@ -44,7 +44,8 @@
 
 <div id="outerWrap">
 
-<div id="header" class="sans">
+<div id="header">
+
 	<div id="header-inner">
 		<a id='menu-icon'><i class="icon-reorder"></i></a>
 

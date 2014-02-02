@@ -89,6 +89,11 @@ function sl_cyclereact_js() {
 	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/matchmedia.js\"></script>";
 	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
 	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
+	$output .="
+	<style type=\"text/css\">
+	#header #header-content .solofolio-cyclereact-sidebar {
+		display: block;
+	}";
 
   echo $output;
 }

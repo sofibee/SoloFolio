@@ -22,10 +22,6 @@ jQuery(window).load(function(){
   setResponsive();
 });
 
-jQuery(window).load(function(){
-  jQuery('#header-content .solofolio-cyclereact-sidebar').show();
-});
-
 jQuery(window).resize(setResponsive);
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, opts ) {
