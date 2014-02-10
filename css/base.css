@@ -195,7 +195,7 @@ p {
   }
 
     #header-content .solofolio-cyclereact-caption {
-      padding-bottom: 10px;
+      padding-bottom: 15px;
     }
 
   #header-content ul li {
@@ -223,7 +223,6 @@ p {
     #logo a img:hover {
       border: none;
     }
-
 
   #logo {
   }
@@ -636,6 +635,20 @@ table tr {
 #solofolio-cyclereact-controls {
   text-align: center;
 }
+
+  .solofolio-cyclereact-controls a {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    line-height: 38px;
+    text-align: center;
+    text-decoration: none;
+  }
 
 #solofolio-cyclereact-images {
   z-index: 2;

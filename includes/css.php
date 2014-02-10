@@ -85,6 +85,19 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
+  .solofolio-cyclereact-controls a {
+    border: 1px solid " . get_theme_mod('solofolio_body_link_color') . ";
+    background-color: " . get_theme_mod('solofolio_body_link_color') . ";
+  }
+
+  .solofolio-cyclereact-controls i {
+    color: " . get_theme_mod('solofolio_background_color') . ";
+  }
+
+  .solofolio-cyclereact-controls a:hover i {
+    color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
+  }
+
   /* Highlight current page item */
 
   #header #header-content .current_page_item a, #header #header-content .current_page_parent a {
