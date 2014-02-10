@@ -86,6 +86,10 @@
       padding: 10px 0 0;
     }
 
+    #content-parent {
+      padding-left: 5px;
+    }
+
     .entry {
       border-bottom: medium none;
       padding: 10px;
@@ -212,9 +216,22 @@
     overflow: scroll;
   }
 
+  #header {
+    margin-left: 0;
+  }
+
   #header #header-location {
     display: none;
   }
+
+  #content-parent {
+    padding-left: 0;
+  }
+
+    #content-parent .children li {
+      padding-left: 10px;
+      padding-right: 0;
+    }
 
   .entry img {
     max-width: 100%;

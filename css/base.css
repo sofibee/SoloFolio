@@ -384,6 +384,20 @@ h2.post-title {
     width: 100%;
 }
 
+#content-parent {
+  padding-left: 20px;
+}
+
+  #content-parent .children h3 {
+    margin: 0;
+  }
+
+  #content-parent .children li {
+    display: inline-block;
+    padding-right: 30px;
+    padding-bottom: 10px;
+  }
+
 #content-about {
   max-width: 900px;
   margin: 0 auto 0;
