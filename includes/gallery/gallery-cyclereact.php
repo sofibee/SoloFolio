@@ -14,7 +14,6 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-manual-speed=\"300\"
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";
-$output .= "		data-cycle-progressive=\"#slides\"";
 								if ($solofolio_autoplay == "true") {
 									$output .= "Autoplay";
 								} else {
@@ -22,16 +21,7 @@ $output .= "		data-cycle-progressive=\"#slides\"";
 								}
 $output .= ">\n\n";
 
-$i = 0;
-$result = count($attachment_ids) - 1;
-
 foreach ($attachment_ids as $id) {
-
-	if ($i == 1) {
-		$output .= "
-		<script id=\"slides\" type=\"text/cycle\" data-cycle-split=\"---\">";
-	}
-
 	$attachment = get_post($id);
 
 	$link = wp_get_attachment_url($id);
@@ -42,7 +32,9 @@ foreach ($attachment_ids as $id) {
 	$link6 = wp_get_attachment_image_src($id, 'medium');
 
 	$output .= "
-		<div class=\"solofolio-cycelereact-slide\" data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\">
+		<div class=\"solofolio-cycelereact-slide\"
+				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
+				 data-cycle-hash=\"" .  $i . "\">
 			<div class=\"solofolio-cycelereact-fill\" data-picture>
 				<div data-src=\"" . $link6[0] . "\"></div>
 				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
@@ -50,19 +42,7 @@ foreach ($attachment_ids as $id) {
 				<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 			</div>
 		</div>";
-
-	if ($i > 0 && $i != (count($attachment_ids) - 1)) {
-		$output .= "
-		---";
-	}
-
-	if ($i == (count($attachment_ids) - 1)) {
-		$output .= "\n</script>";
-	}
-
-	$i++;
-
-} // End ForEach
+}
 
 $output .= "</div>\n";
 
