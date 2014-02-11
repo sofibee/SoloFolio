@@ -15,14 +15,21 @@ add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 
-/**
- * Register style sheet.
- */
 function register_solofolio_styles() {
   $uploads = wp_upload_dir();
   wp_register_style('solofolio', $uploads['baseurl'] . '/solofolio.css', 'style');
   wp_enqueue_style( 'solofolio' );
 }
+
+// Use jQuery Google API
+function modify_jquery() {
+  if (!is_admin()) {
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', false, '2.0.3');
+    wp_enqueue_script('jquery');
+  }
+}
+add_action('init', 'modify_jquery');
 
 // Disable Admin Bar from frontend - More trouble than it's worth
 function hide_admin_bar_from_front_end() {
