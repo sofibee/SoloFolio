@@ -36,11 +36,6 @@ function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
-// Force WP to make high-quality images
-function solo_jpg_quality_callback($arg) {
-  return (int)90;
-}
-
 // Add additional image size for large displays, change defaults for others.
 function solofolio_set_image_sizes() {
 	add_image_size('xlarge',1800,1200, false);
