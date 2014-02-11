@@ -20,11 +20,11 @@ class solofolio_social_widget extends WP_Widget {
 
     echo $before_widget;
     echo "<div id=\"solofolio-social\">";
-    if ($twitter !="") {echo "<a target=\"_blank\" id=\"solofolio-twitter\" href=\"" . $twitter . "\"><i class=\"icon-twitter\"></i></a>";}
-    if ($facebook !="") {echo "<a target=\"_blank\" id=\"solofolio-facebook\" href=\"" . $facebook . "\"><i class=\"icon-facebook\"></i></a>";}
-    if ($vimeo !="") {echo "<a target=\"_blank\" id=\"solofolio-vimeo\" href=\"" . $vimeo . "\"><i class=\"icon-vimeo\"></i></a>";}
-    if ($linkedin !="") {echo "<a target=\"_blank\" id=\"solofolio-linkedin\" href=\"" . $linkedin . "\"><i class=\"icon-linkedin\"></i></a>";}
-    if ($rss !="") {echo "<a target=\"_blank\" id=\"solofolio-rss\" href=\"" . $rss . "\"><i class=\"icon-rss\"></i></a>";}
+    if ($twitter !="") {echo "<a target=\"_blank\" id=\"solofolio-twitter\" href=\"" . $twitter . "\"><i class=\"fa fa-twitter\"></i></a>";}
+    if ($facebook !="") {echo "<a target=\"_blank\" id=\"solofolio-facebook\" href=\"" . $facebook . "\"><i class=\"fa fa-facebook\"></i></a>";}
+    if ($vimeo !="") {echo "<a target=\"_blank\" id=\"solofolio-vimeo\" href=\"" . $vimeo . "\"><i class=\"fa fa-vimeo-square\"></i></a>";}
+    if ($linkedin !="") {echo "<a target=\"_blank\" id=\"solofolio-linkedin\" href=\"" . $linkedin . "\"><i class=\"fa fa-linkedin\"></i></a>";}
+    if ($rss !="") {echo "<a target=\"_blank\" id=\"solofolio-rss\" href=\"" . $rss . "\"><i class=\"fa fa-rss\"></i></a>";}
 	echo "</div>";
 	echo $after_widget;
   }
