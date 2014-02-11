@@ -11,13 +11,12 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,700italic' rel='stylesheet' type='text/css'>
 
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 
 	<?php wp_head(); ?>
-
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,700italic' rel='stylesheet' type='text/css'>
 
 	<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
 	<style type="text/css">
