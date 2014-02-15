@@ -7,6 +7,36 @@ function solofolio_css_cache() {
   file_put_contents($uploads['basedir'] . '/solofolio.css', $data);
 }
 
+// http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
+function colorBrightness($hex, $percent) {
+  $hash = '';
+  if (stristr($hex,'#')) {
+    $hex = str_replace('#','',$hex);
+    $hash = '#';
+  }
+  $rgb = array(hexdec(substr($hex,0,2)), hexdec(substr($hex,2,2)), hexdec(substr($hex,4,2)));
+  for ($i=0; $i<3; $i++) {
+    if ($percent > 0) {
+      $rgb[$i] = round($rgb[$i] * $percent) + round(255 * (1-$percent));
+    } else {
+      $positivePercent = $percent - ($percent*2);
+      $rgb[$i] = round($rgb[$i] * $positivePercent) + round(0 * (1-$positivePercent));
+    }
+    if ($rgb[$i] > 255) {
+      $rgb[$i] = 255;
+    }
+  }
+  $hex = '';
+  for($i=0; $i < 3; $i++) {
+    $hexDigit = dechex($rgb[$i]);
+    if(strlen($hexDigit) == 1) {
+    $hexDigit = "0" . $hexDigit;
+    }
+    $hex .= $hexDigit;
+  }
+  return $hash.$hex;
+}
+
 function solofolio_css() {
   $styles .= file_get_contents(get_bloginfo('template_url') . "/css/base.css");
 
@@ -108,14 +138,14 @@ function solofolio_css() {
   }
 
   input, textarea {
-    color: " . get_theme_mod('solofolio_body_font_color') . ";
-    background-color: " . get_theme_mod('solofolio_navigation_link_color') . ";
+    color: " . get_theme_mod('solofolio_body_link_color') . ";
+    background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
   }
 
   .solofolio-cyclereact-controls a {
     color: " . get_theme_mod('solofolio_body_font_color') . ";
-    border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
-    background-color: " . get_theme_mod('solofolio_navigation_link_color') . ";
+    border: 1px solid " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
+    background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
   }
 
   /* Gallery Styles */
