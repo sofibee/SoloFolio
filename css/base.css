@@ -261,12 +261,6 @@ p {
   left: 270px;
 }
 
-.commentbox {
-  font-size: 11px;
-  margin-bottom: 10px;
-  padding: 2px 5px 2px 5px;
-}
-
 /* Footer */
 
 #sidebar-footer {
@@ -414,8 +408,11 @@ h2.post-title {
 /* Comments */
 
 input, textarea {
-  border: 1px solid #AAAAAA;
+  background-color: #333333;
+  border: none;
+  font-size: 12px;
   margin: 0;
+  padding: 10px 15px
 }
 
 #comments {
@@ -463,16 +460,10 @@ input, textarea {
   margin: 0;
 }
 
-#commentform input, #commentform textarea {
-  padding: 3px;
-  font-size: 12px;
-}
-
 #commentform textarea {
   max-width: 600px;
   width: 100%;
 }
-
 
 .commentlist p {
   font-weight: normal;
@@ -480,7 +471,8 @@ input, textarea {
   text-transform: none;
 }
 
-#commentform p {
+#commentform label {
+  margin-left: 10px;
 }
 
 .commentmetadata {
@@ -536,18 +528,6 @@ div.aligncenter {
     margin: 0;
     padding: 15px 0;
   }
-
-/* Forms */
-#searchform {
-  margin: 0 0 1em;
-}
-
-#searchform input {
-  border: 1px solid #AAAAAA;
-  color: #AAAAAA;
-  height: 14px;
-  padding: 3px;
-}
 
 /* Social Media Widget */
 #solofolio-social {

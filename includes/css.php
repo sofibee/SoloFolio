@@ -108,13 +108,8 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
   }
 
-  /* Forms */
-
   input, textarea {
-    background-color: inherit;
-  }
-
-  input:focus, textarea:focus {
+    color: " . get_theme_mod('solofolio_body_font_color') . ";
   }
 
   /* Gallery Styles */
