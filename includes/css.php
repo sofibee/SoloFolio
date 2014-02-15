@@ -85,17 +85,16 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
-  .solofolio-cyclereact-controls a {
-    border: 1px solid " . get_theme_mod('solofolio_body_link_color') . ";
-    background-color: " . get_theme_mod('solofolio_body_link_color') . ";
-  }
-
   .solofolio-cyclereact-controls i {
-    color: " . get_theme_mod('solofolio_background_color') . ";
+    color: " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
   .solofolio-cyclereact-controls a:hover i {
-    color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
+    color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
+  }
+
+  #sidebar-footer p {
+    color: " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
   /* Highlight current page item */
@@ -181,6 +180,23 @@ function solofolio_css() {
   }";
 
   $styles .= file_get_contents(get_bloginfo('template_url') . "/css/breakpoints.css");
+
+  $less = "
+  input, textarea {
+    color: " . get_theme_mod('solofolio_body_font_color') . ";
+    background-color: darken(". get_theme_mod('solofolio_background_color') . ", 5%);
+  }
+
+  .solofolio-cyclereact-controls a {
+    border: 1px solid darken(". get_theme_mod('solofolio_background_color') . ", 5%);
+    background-color: darken(". get_theme_mod('solofolio_background_color') . ", 5%);
+  }
+  ";
+
+  $output = new lessc;
+  $compiled = $output->compile($less);
+
+  $styles .= $compiled;
 
   $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
   $styles = str_replace(': ', ':', $styles);

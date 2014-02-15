@@ -1,5 +1,6 @@
 <?php
 
+require("includes/lessc.inc.php");
 include_once("includes/gallery.php");     // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
 include_once("includes/caption-widget.php");    // Include caption media widget

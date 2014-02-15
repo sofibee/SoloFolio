@@ -192,6 +192,8 @@ p {
 
     #header-content .solofolio-cyclereact-caption {
       padding-bottom: 15px;
+      line-height: 1.4;
+      font-size: .9em;
     }
 
   #header-content ul li {
@@ -269,18 +271,13 @@ p {
 }
 
   #sidebar-footer p {
-    font-size: 11px;
-    opacity: 0.5;
+    font-size: .9em;
     margin: 0;
   }
 
   #sidebar-footer a {
     text-decoration: underline;
     }
-
-  #sidebar-footer strong {
-    color: #ffffff;
-  }
 
 /* Header */
 
@@ -535,9 +532,8 @@ div.aligncenter {
 }
 
 #solofolio-social a {
-    padding: 10px 10px;
-    font-size: 16px;
-    line-height: 30px;
+  padding: 10px 10px;
+  font-size: 16px;
 }
 
 /* Side scroll gallery */
@@ -612,11 +608,11 @@ table tr {
     -moz-border-radius: 5px;
     border-radius: 5px;
     display: inline-block;
-    font-size: 22px;
+    font-size: 28px;
     width: 40px;
     height: 40px;
     margin-right: 20px;
-    line-height: 38px;
+    line-height: 40px;
     text-align: center;
     text-decoration: none;
   }
