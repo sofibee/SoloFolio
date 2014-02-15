@@ -43,15 +43,15 @@ if (!empty($post->post_password)) { // if there's a password
 			<?php else : ?>
 				<p>
 					<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-					<label for="author"><small>Name<?php if ($req) echo "*"; ?></small></label>
+					<label for="author">Name <small><?php if ($req) echo "(required)"; ?></small></label>
 				</p>
 				<p>
 					<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-					<label for="email"><small>Email<?php if ($req) echo "*"; ?></small></label>
+					<label for="email">Email <small><?php if ($req) echo "(required)"; ?></small></label>
 				</p>
 				<p>
 					<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />
-					<label for="url"><small>Website</small></label>
+					<label for="url">Website</label>
 				</p>
 			<?php endif; ?>
 

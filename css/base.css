@@ -472,6 +472,10 @@ input, textarea {
   margin-left: 10px;
 }
 
+  #commentform label small {
+    font-size: .7em;
+  }
+
 .commentmetadata {
   font-weight: normal;
 }
