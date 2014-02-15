@@ -16,8 +16,8 @@ class solofolio_captions extends WP_Widget {
         echo '<div class="solofolio-cyclereact-sidebar">';
           	echo '<p class="solofolio-cyclereact-caption"></p>';
             echo '<span class="solofolio-cyclereact-controls">';
-                echo '<a class="prev" href="#"><i class="fa fa-caret-left"></i></a>';
-                echo '<a class="next" href="#"><i class="fa fa-caret-right"></i></a>';
+                echo '<a class="prev" href="#"><i class="fa fa-angle-left"></i></a>';
+                echo '<a class="next" href="#"><i class="fa fa-angle-right"></i></a>';
             echo '</span>';
         echo '</div>';
 		echo $after_widget;
