@@ -35,7 +35,7 @@
 <div id="header">
 
 	<div id="header-inner">
-		<a id='menu-icon'><i class="icon-reorder"></i></a>
+		<a id='menu-icon'><i class="fa fa-bars"></i></a>
 
 		<div id="logo">
 			<div id="logo-img">
