@@ -21,8 +21,10 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								}
 $output .= ">\n\n";
 
+$i = 0;
 foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
+	$i++;
 
 	$link = wp_get_attachment_url($id);
 	$link2 = wp_get_attachment_url($id);
