@@ -10,11 +10,12 @@ foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
 	$i++;
 
-	$link = wp_get_attachment_image_src($id, 'medium');
+	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
+	$medium = wp_get_attachment_image_src($id, 'medium');
 
 	$output .= "<div class=\"thumb\">
 								<a href=\"#" . $i . "\">
-									<img src=\"" . $link[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
+									<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
 								</a>
 							</div>";
 }
