@@ -613,11 +613,11 @@ table tr {
     -moz-border-radius: 5px;
     border-radius: 5px;
     display: inline-block;
-    font-size: 36px;
+    font-size: 22px;
     width: 40px;
     height: 40px;
     margin-right: 20px;
-    line-height: 38px;
+    line-height: 40px;
     text-align: center;
     text-decoration: none;
   }
