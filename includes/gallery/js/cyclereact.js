@@ -36,12 +36,19 @@ jQuery(window).load(function(){
 
 jQuery(window).resize(setResponsive);
 
+jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-after', function( event, opts ) {
+  $("#solofolio-cyclereact-thumbs").hide();
+  $("#solofolio-cyclereact-stage, .arrows").show();
+  $(".thumbs").removeClass("show-full");
+});
+
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, opts ) {
   window.picturefill();
   setResponsive();
 });
 
 jQuery(document.documentElement).keyup(function (e) {
-  if (e.keyCode == 39) { jQuery('#solofolio-cyclereact-images').cycle('next') }
   if (e.keyCode == 37) { jQuery('#solofolio-cyclereact-images').cycle('prev') }
+  if (e.keyCode == 38) { jQuery('.thumbs').trigger('click') }
+  if (e.keyCode == 39) { jQuery('#solofolio-cyclereact-images').cycle('next') }
 });
