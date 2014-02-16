@@ -584,6 +584,31 @@ table tr {
   position: relative;
 }
 
+#solofolio-cyclereact-thumbs {
+  display: none;
+  z-index: 8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
+
+  #solofolio-cyclereact-thumbs .thumb {
+    display: inline-block;
+    width: 25%;
+    max-width: 300px;
+  }
+
+    #solofolio-cyclereact-thumbs .thumb a {
+      display: block;
+      padding: 10px;
+    }
+
+      #solofolio-cyclereact-thumbs .thumb img {
+        width: 100%;
+      }
+
 #solofolio-cyclereact-stage {
   position: relative;
 }

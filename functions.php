@@ -51,10 +51,10 @@ function solo_jpg_quality_callback($arg) {
 // Add additional image size for large displays, change defaults for others.
 function solofolio_set_image_sizes() {
 	add_image_size('xlarge',1800,1200, false);
-	update_option('thumbnail_size_w', 150);
-	update_option('thumbnail_size_h', 100);
-	update_option('medium_size_w', 300);
-	update_option('medium_size_h', 200);
+	update_option('thumbnail_size_w', 300);
+	update_option('thumbnail_size_h', 200);
+	update_option('medium_size_w', 600);
+	update_option('medium_size_h', 400);
 	update_option('large_size_w', 900);
 	update_option('large_size_h', 600);
 }

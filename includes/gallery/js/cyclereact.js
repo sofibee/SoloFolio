@@ -20,9 +20,25 @@ var setResponsive = function () {
 
 jQuery(window).load(function(){
   setResponsive();
+  $(".thumbs").click(function(){
+    $("#solofolio-cyclereact-thumbs").toggle();
+    $(".solofolio-cyclereact-controls p").toggle();
+    $("#solofolio-cyclereact-stage").toggle();
+    $(".toggle-thumbs").toggleClass("show-full");
+    $(".toggle-arrows").toggleClass("show-arrows");
+  });
+  $(".thumb a").click(function(){
+    $("#solofolio-cyclereact-thumbs").hide();
+    $("#solofolio-cyclereact-stage").show();
+  });
 });
 
 jQuery(window).resize(setResponsive);
+
+// jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-after', function( event, opts ) {
+//   $("#solofolio-cyclereact-thumbs").hide();
+//   $("#solofolio-cyclereact-stage").show();
+// });
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, opts ) {
   window.picturefill();

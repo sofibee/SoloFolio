@@ -2,6 +2,25 @@
 global $solofolio_autoplay;
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
+
+$output .="<div id=\"solofolio-cyclereact-thumbs\">";
+
+$i = 0;
+foreach ($attachment_ids as $id) {
+	$attachment = get_post($id);
+	$i++;
+
+	$link = wp_get_attachment_image_src($id, 'medium');
+
+	$output .= "<div class=\"thumb\">
+								<a href=\"#" . $i . "\">
+									<img src=\"" . $link[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
+								</a>
+							</div>";
+}
+
+$output .="</div>";
+
 $output .="<div id=\"solofolio-cyclereact-stage\">";
 
 $output .="<div id=\"solofolio-cyclereact-images\"
