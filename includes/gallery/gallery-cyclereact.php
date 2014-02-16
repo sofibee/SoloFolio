@@ -94,7 +94,9 @@ function sl_cyclereact_js() {
 	<style type=\"text/css\">
 	#header #header-content .solofolio-cyclereact-sidebar {
 		display: block;
-	}";
+	}
+	</style>
+	";
 
   echo $output;
 }

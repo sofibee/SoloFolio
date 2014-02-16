@@ -67,6 +67,10 @@
       display: none;
     }
 
+    .solofolio-cyclereact-sidebar {
+      display: none !important;
+    }
+
     #header #logo {
       margin: 0;
     }
