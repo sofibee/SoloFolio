@@ -96,6 +96,7 @@
 
 		<div id="sidebar-footer">
 			<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
+			<p id="solo-footer">Powered by <a title="SoloFolio free photography WordPress theme for creative professionals" href="http://www.solofolio.net">SoloFolio</a></p>
 		</div>
 
 		<div class="clear"></div>

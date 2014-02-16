@@ -272,7 +272,8 @@ p {
 }
 
   #sidebar-footer p {
-    font-size: .9em;
+    font-size: .8em;
+    line-height: 1.3em;
     margin: 0;
   }
 
