@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<!--
+  _____  ____  _      ____  ______ ____  _      _____ ____
+ / ____|/ __ \| |    / __ \|  ____/ __ \| |    |_   _/ __ \
+| (___ | |  | | |   | |  | | |__ | |  | | |      | || |  | |
+ \___ \| |  | | |   | |  | |  __|| |  | | |      | || |  | |
+ ____) | |__| | |___| |__| | |   | |__| | |____ _| || |__| |
+|_____/ \____/|______\____/|_|    \____/|______|_____\____/
+SoloFolio v6.20140216 - github.com/solofolio
+-->
 
-<!-- Hi! This site is using SoloFolio, if you were wondering. You can learn more about the SoloFolio platform at Solofolio.net. Cheers! -->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
