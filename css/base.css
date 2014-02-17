@@ -591,23 +591,38 @@ table tr {
   position: absolute;
   left: 0;
   bottom: 0;
-  top: 0;
+  top: -10px;
   right: 0;
+  list-style-type: none;
 }
 
   #solofolio-cyclereact-thumbs .thumb {
-    display: inline-block;
+    float: left;
     width: 25%;
     max-width: 300px;
+    border: 10px solid #fff;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
     #solofolio-cyclereact-thumbs .thumb a {
       display: block;
-      padding: 0 10px 15px 10px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 0;
+      padding-top: 66%;
     }
 
       #solofolio-cyclereact-thumbs .thumb img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
       }
 
 #solofolio-cyclereact-stage {

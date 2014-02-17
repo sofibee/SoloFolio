@@ -3,7 +3,7 @@ global $solofolio_autoplay;
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
-$output .="<div id=\"solofolio-cyclereact-thumbs\">";
+$output .="<ul id=\"solofolio-cyclereact-thumbs\">";
 
 $i = 0;
 foreach ($attachment_ids as $id) {
@@ -13,14 +13,14 @@ foreach ($attachment_ids as $id) {
 	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
 	$medium = wp_get_attachment_image_src($id, 'medium');
 
-	$output .= "<div class=\"thumb\">
+	$output .= "<li class=\"thumb\">
 								<a href=\"#" . $i . "\">
 									<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
 								</a>
-							</div>";
+							</li>";
 }
 
-$output .="</div>";
+$output .="</ul>";
 
 $output .="<div id=\"solofolio-cyclereact-stage\">";
 
